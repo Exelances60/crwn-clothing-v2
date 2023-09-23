@@ -29,7 +29,6 @@ const Button: FC<ButtonProps> = ({
   isLoading,
   ...otherProps
 }) => {
-  console.log(children);
   const CustomButton = getButton(buttonType);
   return <CustomButton {...otherProps}>{children}</CustomButton>;
 };
