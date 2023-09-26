@@ -30,7 +30,11 @@ const Button: FC<ButtonProps> = ({
   ...otherProps
 }) => {
   const CustomButton = getButton(buttonType);
-  return <CustomButton {...otherProps}>{children}</CustomButton>;
+  return (
+    <CustomButton disabled={isLoading} {...otherProps}>
+      {isLoading ? "Loading..." : children}
+    </CustomButton>
+  );
 };
 
 export default Button;
